@@ -26,7 +26,7 @@ jobs:
       - name: Deploy to server
         run: |
           ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /home/${{ secrets.SSH_USER }}/portfolio
+            cd /home/${{ secrets.SSH_USER }}/git/portfolio
             git pull origin main
             docker-compose up -d --build
           EOF
