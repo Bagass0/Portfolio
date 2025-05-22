@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./Frontend
+    ports:
+      - "80:80"
