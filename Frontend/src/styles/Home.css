@@ -1,0 +1,14 @@
+.home {
+    padding: 6rem 2rem 2rem; /* Adjust padding to account for fixed navbar */
+  }
+  
+  h2 {
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }

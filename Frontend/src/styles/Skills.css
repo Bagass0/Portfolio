@@ -1,0 +1,19 @@
+.skills-page {
+    padding: 6rem 2rem 2rem;
+  }
+  
+  h2 {
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }

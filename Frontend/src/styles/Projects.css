@@ -1,0 +1,44 @@
+.projects-page {
+    padding: 6rem 2rem 2rem; /* Ajuste le padding pour la navbar fixe */
+    max-width: 1200px;
+    margin: 0 auto; /* Centre horizontalement */
+    text-align: center; /* Centre le texte */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+  }
+  
+  .projects-page h2 {
+    color: #4CAF50;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; /* Centre la grille */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    justify-content: center; /* Centre les éléments dans la grille */
+  }
+  
+  .projects-page li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .projects-page li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .projects-page li::before {
+    content: "📁"; /* Icône pour chaque projet */
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #4CAF50;
+  }
