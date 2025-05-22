@@ -5,10 +5,28 @@ function Skills() {
   return (
     <div className="skills-page">
       <h2>Mes Compétences</h2>
-      <ul>
-        <li>Langages : PHP, SQL, JavaScript, Python, HTML5/CSS3, YAML/JSON</li>
-        <li>Frameworks : ReactJS/Vite, React Native/Expo, Symfony, NodeJS/Express</li>
-      </ul>
+      <div className="skills-list">
+        <div className="skill-group">
+          <h3>Langages</h3>
+          <ul>
+            <li><span className="icon">🐘</span> PHP</li>
+            <li><span className="icon">🗄️</span> SQL</li>
+            <li><span className="icon">✨</span> JavaScript</li>
+            <li><span className="icon">🐍</span> Python</li>
+            <li><span className="icon">🌐</span> HTML5/CSS3</li>
+            <li><span className="icon">📝</span> YAML/JSON</li>
+          </ul>
+        </div>
+        <div className="skill-group">
+          <h3>Frameworks</h3>
+          <ul>
+            <li><span className="icon">⚛️</span> ReactJS/Vite</li>
+            <li><span className="icon">📱</span> React Native/Expo</li>
+            <li><span className="icon">🎼</span> Symfony</li>
+            <li><span className="icon">🌲</span> NodeJS/Express</li>
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }

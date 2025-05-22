@@ -1,19 +1,63 @@
 .skills-page {
-    padding: 6rem 2rem 2rem;
-  }
-  
-  h2 {
-    color: #4CAF50;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin: 0.5rem 0;
-    font-size: 1.1rem;
-  }
+  padding: 6rem 2rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.skills-page h2 {
+  color: #4CAF50;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.skill-group {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.08);
+  padding: 2rem 2.5rem;
+  min-width: 260px;
+  max-width: 350px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-group:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.15);
+}
+
+.skill-group h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.skill-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-group li {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  margin: 0.7rem 0;
+  color: #222;
+  justify-content: flex-start;
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-right: 0.7rem;
+}
