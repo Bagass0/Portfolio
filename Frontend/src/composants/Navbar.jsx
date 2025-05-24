@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [lang, setLang] = useState('fr');
+  const location = useLocation();
+
+  const navOptions = [
+    { path: '/', label: lang === 'fr' ? 'Accueil' : 'Home' },
+    { path: '/projects', label: lang === 'fr' ? 'Projets' : 'Projects' },
+    { path: '/about', label: lang === 'fr' ? 'À propos' : 'About' },
+    { path: '/contact', label: lang === 'fr' ? 'Contact' : 'Contact' },
+  ];
 
   return (
     <nav className="navbar">
@@ -12,12 +21,38 @@ function Navbar() {
         <span className="navbar-title">MonPortfolio</span>
       </div>
       <div className={`navbar-links ${open ? 'open' : ''}`}>
-        <Link to="/" onClick={() => setOpen(false)}>Accueil</Link>
-        <Link to="/projects" onClick={() => setOpen(false)}>Projets</Link>
-        <Link to="/about" onClick={() => setOpen(false)}>À propos</Link>
-        <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+        {navOptions.map(option => (
+          <Link
+            key={option.path}
+            to={option.path}
+            className={location.pathname === option.path ? 'active' : ''}
+            onClick={() => setOpen(false)}
+          >
+            {option.label}
+          </Link>
+        ))}
+        <div className="navbar-lang">
+          <button
+            className={lang === 'fr' ? 'active' : ''}
+            onClick={() => setLang('fr')}
+          >
+            FR
+          </button>
+          <span className="lang-sep"> | </span>
+          <button
+            className={lang === 'en' ? 'active' : ''}
+            onClick={() => setLang('en')}
+          >
+            EN
+          </button>
+        </div>
       </div>
-      <button className="navbar-burger" onClick={() => setOpen(!open)}>
+      <button
+        className={`navbar-burger${open ? ' open' : ''}`}
+        onClick={() => setOpen(!open)}
+        aria-label="Menu"
+        aria-expanded={open}
+      >
         <span />
         <span />
         <span />
