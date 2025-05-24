@@ -6,3 +6,4 @@ services:
       context: ./Frontend
     ports:
       - "80:80"
+    restart: unless-stopped  
