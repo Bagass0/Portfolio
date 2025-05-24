@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: space-between;
   background: rgba(20, 30, 48, 0.98);
-  padding: 18px 32px;
+  padding: 0 32px;
+  min-height: 56px; /* S'adapte à la taille du logo */
   box-shadow: 0 2px 16px 0 rgba(33, 150, 243, 0.10);
   position: sticky;
   top: 0;
@@ -11,67 +12,39 @@
 }
 
 .navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   color: #4fc3f7;
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 2px;
+  height: 56px;
 }
 
-.navbar-links {
-  display: flex;
-  gap: 32px;
-}
-
-.navbar-links a {
-  color: #e0e6ed;
-  font-size: 1.1rem;
-  padding: 8px 0;
-  border-bottom: 2px solid transparent;
-  transition: border 0.2s, color 0.2s;
-}
-
-.navbar-links a:hover {
-  color: #4fc3f7;
-  border-bottom: 2px solid #4fc3f7;
-}
-
-.navbar-burger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.navbar-burger span {
-  width: 26px;
-  height: 3px;
-  background: #4fc3f7;
-  border-radius: 2px;
+.logo-image {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(33,150,243,0.10);
+  background: #16202a;
+  transition: transform 0.2s;
   display: block;
 }
 
-@media (max-width: 800px) {
-  .navbar-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #203a43;
-    flex-direction: column;
-    gap: 0;
-    width: 180px;
-    padding: 18px 0;
-    border-radius: 0 0 0 12px;
-    box-shadow: 0 8px 24px rgba(33,150,243,0.12);
-    transform: translateY(-200%);
-    transition: transform 0.3s;
-    z-index: 99;
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 12px;
+    min-height: 44px;
   }
-  .navbar-links.open {
-    transform: translateY(0);
+  .navbar-logo {
+    font-size: 1.1rem;
+    gap: 8px;
+    height: 44px;
   }
-  .navbar-burger {
-    display: flex;
+  .logo-image {
+    width: 28px;
+    height: 28px;
   }
 }

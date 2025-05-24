@@ -9,8 +9,8 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-logo">
         <img src="/favicon.png" alt="Logo" className="logo-image" />
-        MonPortfolio
-        </div>
+        <span className="navbar-title">MonPortfolio</span>
+      </div>
       <div className={`navbar-links ${open ? 'open' : ''}`}>
         <Link to="/" onClick={() => setOpen(false)}>Accueil</Link>
         <Link to="/projects" onClick={() => setOpen(false)}>Projets</Link>
