@@ -9,6 +9,7 @@ function Projects() {
         <li>Projet 1 : Application web de gestion de tâches</li>
         <li>Projet 2 : Portfolio personnel</li>
         <li>Projet 3 : API REST pour une boutique en ligne</li>
+        <li>Projet 4 : Example</li>
       </ul>
     </div>
   );
