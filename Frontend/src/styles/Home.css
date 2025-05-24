@@ -1,14 +1,129 @@
-.home {
-    padding: 6rem 2rem 2rem; /* Adjust padding to account for fixed navbar */
+.home-modern {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #e0e6ed;
+  padding: 40px 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  animation: fadeInDown 0.8s cubic-bezier(.77,0,.18,1) both;
+}
+
+.intro h2 {
+  font-size: 2.5rem;
+  color: #4fc3f7;
+  margin-bottom: 16px;
+  letter-spacing: 1px;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  color: #b0bec5;
+}
+
+.projects-preview {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.projects-preview h3 {
+  color: #90caf9;
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  justify-content: center;
+}
+
+.project-card {
+  background: rgba(20, 30, 48, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(33, 150, 243, 0.15);
+  padding: 28px 24px;
+  width: 270px;
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(.77,0,.18,1), box-shadow 0.18s;
+  border: 1.5px solid transparent;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.7s cubic-bezier(.77,0,.18,1) both;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 40px 0 rgba(33, 150, 243, 0.25);
+  border-color: #4fc3f7;
+}
+
+.project-card h4 {
+  color: #4fc3f7;
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  color: #b0bec5;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.see-more {
+  color: #90caf9;
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: absolute;
+  bottom: 18px;
+  right: 24px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.project-card:hover .see-more {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Ajoute à la fin de Home.css */
+@media (max-width: 900px) {
+  .projects-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
   }
-  
-  h2 {
-    color: #4CAF50;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  .projects-preview {
+    padding: 0 8px;
   }
-  
-  p {
+}
+
+@media (max-width: 600px) {
+  .intro h2 {
+    font-size: 1.5rem;
+  }
+  .projects-preview h3 {
     font-size: 1.2rem;
-    line-height: 1.8;
   }
+  .project-card {
+    width: 95vw;
+    min-width: 0;
+    padding: 18px 10px;
+  }
+}

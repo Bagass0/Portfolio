@@ -1,0 +1,31 @@
+.about-modern {
+  max-width: 700px;
+  margin: 60px auto 0 auto;
+  background: rgba(20, 30, 48, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px 0 rgba(33, 150, 243, 0.10);
+  padding: 40px 32px;
+  color: #e0e6ed;
+  animation: fadeInDown 0.8s cubic-bezier(.77,0,.18,1) both;
+}
+
+.about-modern h2 {
+  color: #4fc3f7;
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.about-modern p {
+  color: #b0bec5;
+  font-size: 1.15rem;
+}
+
+@media (max-width: 600px) {
+  .about-modern {
+    padding: 24px 10px;
+    margin: 24px 8px 0 8px;
+  }
+  .about-modern h2 {
+    font-size: 1.3rem;
+  }
+}

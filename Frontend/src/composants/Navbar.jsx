@@ -1,16 +1,24 @@
-import '../styles/Navbar.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../styles/Navbar.css';
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <h1 className="logo">Mon Portfolio</h1>
-      <ul className="nav-links">
-        <li><Link to="/">Accueil</Link></li>
-        <li><Link to="/skills">Compétences</Link></li>
-        <li><Link to="/projects">Projets</Link></li>
-      </ul>
+      <div className="navbar-logo">MonPortfolio</div>
+      <div className={`navbar-links ${open ? 'open' : ''}`}>
+        <Link to="/" onClick={() => setOpen(false)}>Accueil</Link>
+        <Link to="/projects" onClick={() => setOpen(false)}>Projets</Link>
+        <Link to="/about" onClick={() => setOpen(false)}>À propos</Link>
+        <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+      </div>
+      <button className="navbar-burger" onClick={() => setOpen(!open)}>
+        <span />
+        <span />
+        <span />
+      </button>
     </nav>
   );
 }
