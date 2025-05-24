@@ -7,7 +7,10 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">MonPortfolio</div>
+      <div className="navbar-logo">
+        <img src="/favicon.png" alt="Logo" className="logo-image" />
+        MonPortfolio
+        </div>
       <div className={`navbar-links ${open ? 'open' : ''}`}>
         <Link to="/" onClick={() => setOpen(false)}>Accueil</Link>
         <Link to="/projects" onClick={() => setOpen(false)}>Projets</Link>
