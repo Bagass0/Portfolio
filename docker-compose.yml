@@ -4,6 +4,15 @@ services:
   frontend:
     build:
       context: ./Frontend
-    ports:
-      - "80:80"
-    restart: unless-stopped  
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`hugobarbosa.fr`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
