@@ -5,7 +5,7 @@ WORKDIR /app
 
 # Copier uniquement les fichiers nécessaires au début (cache docker)
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
 # Copier tout le reste et lancer le build
 COPY . .
