@@ -6,7 +6,7 @@ services:
       context: ./Frontend
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.frontend.rule=Host('hugobarbosa.fr') || Host('www.hugobarbosa.fr')"
+      - "traefik.http.routers.frontend.rule=Host('hugobarbosa.fr')"
       - "traefik.http.routers.frontend.entrypoints=websecure"
       - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
 
