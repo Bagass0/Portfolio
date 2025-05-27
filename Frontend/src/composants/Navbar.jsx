@@ -17,7 +17,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <img src="/favicon.png" alt="Logo" className="logo-image" />
+        <img src="/icon.png" alt="Logo" className="logo-image" />
         <span className="navbar-title">MonPortfolio</span>
       </div>
       <div className={`navbar-links ${open ? 'open' : ''}`}>
