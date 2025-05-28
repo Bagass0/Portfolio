@@ -26,7 +26,7 @@ function Home() {
   return (
     <div className="home-modern">
       <section className="intro">
-        <h2>Bienvenue sur mon Portfolio</h2>
+        <h1>Bienvenue sur mon Portfolio</h1>
         <p>
           Développeur passionné, je conçois des applications web modernes et performantes.<br />
           Découvrez mes projets et compétences ci-dessous.
