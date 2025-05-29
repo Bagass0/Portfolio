@@ -1,7 +1,6 @@
-import '../styles/Skills.css';
-import React from 'react';
+import '../styles/Contact.css';
 
-function Skills() {
+const Skills = () => {
   return (
     <div className="skills-page">
       <h2>Mes Compétences</h2>

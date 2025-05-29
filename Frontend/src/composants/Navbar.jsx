@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
-function Navbar() {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [lang, setLang] = useState('fr');
   const location = useLocation();
@@ -16,9 +16,10 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-logo">
-        <img src="/icon.png" alt="Logo" className="logo-image" />
-        <span className="navbar-title">MonPortfolio</span>
+      <div >
+        <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
+          <img src="/icon.png" alt="Logo" className="logo-image" />
+        </Link>
       </div>
       <div className={`navbar-links ${open ? 'open' : ''}`}>
         {navOptions.map(option => (
@@ -31,21 +32,12 @@ function Navbar() {
             {option.label}
           </Link>
         ))}
-        <div className="navbar-lang">
-          <button
-            className={lang === 'fr' ? 'active' : ''}
-            onClick={() => setLang('fr')}
-          >
-            FR
-          </button>
-          <span className="lang-sep"> | </span>
-          <button
-            className={lang === 'en' ? 'active' : ''}
-            onClick={() => setLang('en')}
-          >
-            EN
-          </button>
-        </div>
+
+      </div>
+      <div className="navbar-lang">
+        <button className={lang === 'fr' ? 'active' : ''} onClick={() => setLang('fr')}>FR</button>
+        <span className="lang-sep"> | </span>
+        <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
       </div>
       <button
         className={`navbar-burger${open ? ' open' : ''}`}

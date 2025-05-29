@@ -1,7 +1,6 @@
-import React from 'react';
 import '../styles/About.css';
 
-function About() {
+const About = () => {
   return (
     <div className="about-modern">
       <h2>À propos de moi</h2>

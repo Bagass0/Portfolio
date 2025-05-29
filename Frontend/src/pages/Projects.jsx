@@ -1,7 +1,6 @@
 import '../styles/Projects.css';
-import React from 'react';
 
-function Projects() {
+const Projects = () =>{
   return (
     <div className="projects-page">
       <h2>Mes Projets</h2>

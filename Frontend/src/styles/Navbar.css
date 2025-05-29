@@ -174,11 +174,5 @@
   .navbar-burger {
     display: flex;
   }
-  .navbar-lang {
-    position: absolute;
-    right: 12px;
-    top: 8px;
-    margin-left: 0;
-    gap: 2px;
-  }
+
 }
