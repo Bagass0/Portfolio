@@ -1,63 +1,65 @@
-.skills-page {
-  padding: 6rem 2rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.skills-page h2 {
-  color: #4c63af;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  letter-spacing: 1px;
-}
-
-.skills-list {
+.contact-page {
+  min-height: 60vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 3rem;
+  padding: 32px 8px 0 8px;
 }
 
-.skill-group {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.08);
-  padding: 2rem 2.5rem;
-  min-width: 260px;
-  max-width: 350px;
-  transition: transform 0.2s, box-shadow 0.2s;
+.contact-page h2 {
+  color: #4fc3f7;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: 1.5px;
+  text-align: center;
 }
 
-.skill-group:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.15);
+.contact-intro {
+  color: #b0bec5;
+  font-size: 1.08rem;
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 420px;
 }
 
-.skill-group h3 {
-  color: #333;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-  letter-spacing: 0.5px;
+.contact-box {
+  background: #202b3a;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(33,150,243,0.07);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 420px;
 }
 
-.skill-group ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.skill-group li {
+.contact-link {
+  color: #4fc3f7;
+  font-size: 1.13rem;
+  text-decoration: none;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  font-size: 1.15rem;
-  margin: 0.7rem 0;
-  color: #222;
-  justify-content: flex-start;
+  gap: 14px;
+  transition: color 0.2s, transform 0.2s;
+  word-break: break-all;
+  background: #16202a;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(33,150,243,0.06);
 }
 
-.icon {
+.contact-link:hover {
+  color: #e3f2fd;
+  transform: translateY(-2px) scale(1.04);
+  background: #263446;
+}
+
+.contact-link svg {
   font-size: 1.5rem;
-  margin-right: 0.7rem;
 }

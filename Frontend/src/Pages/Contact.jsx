@@ -1,33 +1,45 @@
 import '../styles/Contact.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const Skills = () => {
-  return (
-    <div className="skills-page">
-      <h2>Mes Compétences</h2>
-      <div className="skills-list">
-        <div className="skill-group">
-          <h3>Langages</h3>
-          <ul>
-            <li><span className="icon">🐘</span> PHP</li>
-            <li><span className="icon">🗄️</span> SQL</li>
-            <li><span className="icon">✨</span> JavaScript</li>
-            <li><span className="icon">🐍</span> Python</li>
-            <li><span className="icon">🌐</span> HTML5/CSS3</li>
-            <li><span className="icon">📝</span> YAML/JSON</li>
-          </ul>
-        </div>
-        <div className="skill-group">
-          <h3>Frameworks</h3>
-          <ul>
-            <li><span className="icon">⚛️</span> ReactJS/Vite</li>
-            <li><span className="icon">📱</span> React Native/Expo</li>
-            <li><span className="icon">🎼</span> Symfony</li>
-            <li><span className="icon">🌲</span> NodeJS/Express</li>
-          </ul>
-        </div>
-      </div>
+const Contact = () => (
+  <div className="contact-page">
+    <h2>Entrer en contact</h2>
+    <p className="contact-intro">
+      Discutons ensemble ! Pour toute collaboration, question ou opportunité, contactez-moi via l’un des moyens ci-dessous.
+    </p>
+    <div className="contact-box">
+      <a
+        href="mailto:hugo.barbosa.pereira@gmail.com"
+        className="contact-link"
+        aria-label="Mail"
+      >
+        <FontAwesomeIcon icon={faEnvelope} />
+        hugo.barbosa.pereira@gmail.com
+      </a>
+      <a
+        href="https://github.com/Bagass0"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-link"
+        aria-label="GitHub"
+      >
+        <FontAwesomeIcon icon={faGithub} />
+        github.com/Bagass0
+      </a>
+      <a
+        href="https://linkedin.com/in/hugo-barbosa-pereira"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-link"
+        aria-label="LinkedIn"
+      >
+        <FontAwesomeIcon icon={faLinkedin} />
+        linkedin.com/in/hugo-barbosa-pereira
+      </a>
     </div>
-  );
-}
+  </div>
+);
 
-export default Skills;
+export default Contact;
