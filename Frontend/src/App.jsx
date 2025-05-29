@@ -1,13 +1,12 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
-
-import Footer from './Composants/Footer';
-import Home from './Pages/Home';
-import Projects from './Pages/Projects';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
-import NotFound from './Pages/NotFound';
-import Navbar from './Composants/Navbar';
+import Navbar from './composants/Navbar';
+import Footer from './composants/Footer';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
