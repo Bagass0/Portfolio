@@ -7,7 +7,7 @@
   }
   
   .projects-page h2 {
-    color: #4CAF50;
+    color: #263446;
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
   }
@@ -40,5 +40,5 @@
     content: "📁"; /* Icône pour chaque projet */
     font-size: 1.5rem;
     margin-right: 0.5rem;
-    color: #4CAF50;
+    color: #263446;
   }
