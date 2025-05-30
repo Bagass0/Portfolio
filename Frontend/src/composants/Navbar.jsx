@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div >
         <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-          <img src="/icon.png" alt="Logo" className="logo-image" />
+          <img src="/logo.png" alt="Logo" className="logo-image" />
         </Link>
       </div>
       <div className={`navbar-links ${open ? 'open' : ''}`}>
