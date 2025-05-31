@@ -98,6 +98,23 @@
 
 
 /***** TIMELINE *****/
+.timeline-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.timeline-company-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(33, 150, 243, 0.08);
+  background-color: white;
+  border: 2px solid var(--dark-bg3);
+}
+
 .timeline-section {
   background: #192231;
   padding: 48px 0 32px 0;
@@ -216,11 +233,6 @@
 
 /***** RESPONSIVE *****/
 @media (max-width: 600px) {
-  .header-logo {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 18px;
-  }
 
   .header-title,
   .typewriter {
@@ -228,19 +240,39 @@
     min-width: 120px;
   }
 
+  .header-banniere {
+    width: 85%;
+  }
+
   .header-socials a {
     font-size: 1.4rem;
   }
 
   .timeline {
-    width: 98%;
+    width: 80%;
     padding: 12px 0;
+  }
+
+  .timeline-title {
+    font-size: 1.3rem;
   }
 
   .timeline::before {
     left: 18px;
     top: 18px;
     bottom: 18px;
+  }
+
+  .timeline-content h3 {
+    font-size: 0.8rem;
+  }
+
+  .timeline-company, .timeline-date {
+    font-size: 0.8rem;
+  }
+
+  .timeline-content ul li {
+    font-size: 0.8rem;
   }
 
   .timeline-item {
