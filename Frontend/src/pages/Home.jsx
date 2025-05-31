@@ -2,7 +2,7 @@ import '../styles/Home.css';
 import { Typewriter } from 'react-simple-typewriter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faLaptopCode, faCode, faCodeBranch, faGraduationCap, faUniversity } from '@fortawesome/free-solid-svg-icons';
+import { faLaptopCode, faCode, faCodeBranch, faGraduationCap, faUniversity, faChalkboardUser, faSchool } from '@fortawesome/free-solid-svg-icons';
 
 const roles = [
   "Développeur Full Stack",
@@ -97,7 +97,7 @@ const educations = [
     title: "BTS Systèmes numériques informatique et réseaux",
     school: "Lycée Polyvalent Christophe Colomb 154 Rue de Boissy, 94370 Sucy-enBrie",
     date: "2020 - 2022",
-    logo: faUniversity,
+    logo: faSchool,
     schoolImg: "/images/ecoles/vdm.jpg",
     tasks: [
       "Langages étudiés : Python, C++, Java, HTML/CSS, PHP, JavaScript",
@@ -112,7 +112,7 @@ const educations = [
     title: "Baccalauréat Scientifique",
     school: "Lycée Polyvalent Samuel De Champlain - 94430 Chennevières-sur-Marne",
     date: "2019 - 2020",
-    logo: faUniversity,
+    logo: faChalkboardUser,
     schoolImg: "/images/ecoles/vdm.jpg",
     tasks: [
       "Spécialité Sciences de la Vie et de la Terre"
