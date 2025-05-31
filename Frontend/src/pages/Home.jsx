@@ -95,7 +95,7 @@ const educations = [
   {
     type: "edu",
     title: "BTS Systèmes numériques informatique et réseaux",
-    school: "Lycée Polyvalent Christophe Colomb 154 Rue de Boissy, 94370 Sucy-enBrie",
+    school: "Lycée Polyvalent Christophe Colomb - 154 Rue de Boissy, 94370 Sucy-enBrie",
     date: "2020 - 2022",
     logo: faSchool,
     schoolImg: "/images/ecoles/vdm.jpg",
