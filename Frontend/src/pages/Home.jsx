@@ -162,7 +162,7 @@ const Home = () => {
         <div className="header-bg"></div>
       </header>
       <section className="timeline-section">
-        <h2 className="timeline-title">Expériences professionnelles</h2>
+        <h2 className="timeline-title">Expériences Professionnelles</h2>
         <div className="timeline">
           {experiences.map((exp, idx) => (
             <div className={`timeline-item ${exp.type}`} key={idx}>
