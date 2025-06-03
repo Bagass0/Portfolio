@@ -3,7 +3,20 @@
   padding: 18px 0;
   text-align: center;
   font-size: 1rem;
+  background: #16202a;
   border-top: 1px solid #263446;
+}
+
+/* Footer always at bottom */
+.footer {
+  width: 100%;
+  text-align: center;
+  color: #b0bec5;
+  padding: 18px 0;
+  border-top: 1px solid #263446;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer-content {

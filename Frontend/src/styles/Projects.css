@@ -1,44 +1,54 @@
 .projects-page {
-    padding: 6rem 2rem 2rem; /* Ajuste le padding pour la navbar fixe */
-    max-width: 1200px;
-    margin: 0 auto; /* Centre horizontalement */
-    text-align: center; /* Centre le texte */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
-  }
-  
-  .projects-page h2 {
-    color: #263446;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .projects-page ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto; /* Centre la grille */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    justify-content: center; /* Centre les éléments dans la grille */
-  }
-  
-  .projects-page li {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .projects-page li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  }
-  
-  .projects-page li::before {
-    content: "📁"; /* Icône pour chaque projet */
-    font-size: 1.5rem;
-    margin-right: 0.5rem;
-    color: #263446;
-  }
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.dev-banner {
+  margin: 0 auto;
+  max-width: 420px;
+  background: #202b3a;
+  color: #7ecbfa;
+  border-radius: 18px;
+  border: 2.5px solid #7ecbfa;
+  box-shadow:
+    0 0 10px #7ecbfa,
+    0 0 24px #263446,
+    0 2px 12px rgba(33,150,243,0.10);
+  padding: 38px 26px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: visible;
+}
+
+.dev-banner::before,
+.dev-banner::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #7ecbfa;
+  box-shadow:
+    0 0 8px #7ecbfa,
+    0 0 16px #7ecbfa;
+  opacity: 0.7;
+  z-index: 2;
+}
+.dev-banner::before {
+  left: 12px;
+}
+.dev-banner::after {
+  right: 12px;
+}

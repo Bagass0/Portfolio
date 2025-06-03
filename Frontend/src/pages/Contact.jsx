@@ -19,16 +19,6 @@ const Contact = () => (
         hugo.barbosa.pereira@gmail.com
       </a>
       <a
-        href="https://github.com/Bagass0"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="contact-link"
-        aria-label="GitHub"
-      >
-        <FontAwesomeIcon icon={faGithub} />
-        github.com/Bagass0
-      </a>
-      <a
         href="https://linkedin.com/in/hugo-barbosa-pereira"
         target="_blank"
         rel="noopener noreferrer"

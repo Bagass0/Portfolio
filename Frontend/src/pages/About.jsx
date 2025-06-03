@@ -2,12 +2,12 @@ import '../styles/About.css';
 
 const About = () => {
   return (
-    <div className="about-modern">
-      <h2>À propos de moi</h2>
-      <p>
-        Je suis un développeur passionné par la création d’expériences web modernes, performantes et élégantes.<br />
-        J’aime travailler avec React, Node.js et les technologies cloud.
-      </p>
+    <div className="projects-page">
+      <div className="dev-banner">
+        <span className="dev-emoji">🚧</span>
+        <span>Cette page est en cours de développement</span>
+        <span className="dev-emoji">🚧</span>
+      </div>
     </div>
   );
 }

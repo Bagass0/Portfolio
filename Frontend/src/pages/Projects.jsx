@@ -1,15 +1,18 @@
 import '../styles/Projects.css';
 
-const Projects = () =>{
+const Projects = () => {
   return (
     <div className="projects-page">
-      <h2>Mes Projets</h2>
-      <ul>
-        <li>Projet 1 : Application web de gestion de tâches</li>
-        <li>Projet 2 : Portfolio personnel</li>
-        <li>Projet 3 : API REST pour une boutique en ligne</li>
-        <li>Projet 4 : Example</li>
-      </ul>
+      <div className="dev-banner animated-dev-banner">
+        <span className="dev-emoji animated-emoji">🚧</span>
+        <span className="dev-text">
+          <span>Cette page est en cours de développement</span>
+        </span>
+        <span className="dev-emoji animated-emoji">🚧</span>
+      </div>
+      <div className="dev-progress-bar">
+        <div className="dev-progress"></div>
+      </div>
     </div>
   );
 }
