@@ -11,12 +11,12 @@ const Contact = () => (
     </p>
     <div className="contact-box">
       <a
-        href="mailto:hugo.barbosa.pereira@gmail.com"
+        href="mailto:hugo.b_pereira@outlook.com"
         className="contact-link"
         aria-label="Mail"
       >
         <FontAwesomeIcon icon={faEnvelope} />
-        hugo.barbosa.pereira@gmail.com
+        hugo.b_pereira@outlook.com
       </a>
       <a
         href="https://linkedin.com/in/hugo-barbosa-pereira"
