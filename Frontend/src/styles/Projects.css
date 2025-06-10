@@ -2,9 +2,9 @@
   min-height: 80vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 90px; /* ajuste selon la hauteur de ta barre de filtres */
 }
 
 .dev-banner {
@@ -51,4 +51,114 @@
 }
 .dev-banner::after {
   right: 12px;
+}
+
+.tech-filters-fixed {
+  position: static; /* plus de fixed ni sticky */
+  width: 100%;
+  background: transparent;
+  z-index: 10;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.tech-btn {
+  background: #16202a;
+  color: #4fc3f7;
+  border: 1.5px solid #4fc3f7;
+  border-radius: 8px;
+  padding: 8px 14px 8px 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.tech-btn.selected,
+.tech-btn:hover {
+  background: #4fc3f7;
+  color: #16202a;
+  border-color: #90caf9;
+}
+
+.tech-icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(33,150,243,0.07);
+}
+
+.projects-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.project-card {
+  background: #202b3a;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+  padding: 22px 18px;
+  min-width: 220px;
+  max-width: 320px;
+  color: #e3f2fd;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.project-card h3 {
+  color: #4fc3f7;
+  margin-bottom: 6px;
+}
+
+.project-techs {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.project-tech {
+  background: #16202a;
+  color: #4fc3f7;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.95rem;
+}
+
+.no-project {
+  color: #b0bec5;
+  font-size: 1.1rem;
+  margin-top: 18px;
+}
+
+.projects-title {
+  color: #4fc3f7;
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
