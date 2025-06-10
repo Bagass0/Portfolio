@@ -18,12 +18,12 @@
 }
 
 .footer a {
-  color: #4fc3f7;
+  color: white;
   text-decoration: none;
   margin: 0 6px;
   transition: color 0.2s;
 }
 
 .footer a:hover {
-  color: #e3f2fd;
+  color: var(--primary-blue);
 }

@@ -1,4 +1,4 @@
-html, body, #root {
+body, #root {
   margin: 0;
   padding: 0;
   display: flex;
@@ -22,7 +22,6 @@ a {
 }
 a:hover {
   color: var(--secondary-blue);
-  text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
