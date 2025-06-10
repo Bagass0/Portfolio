@@ -12,7 +12,6 @@
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: dark;
   color: var(--text-main);
   background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-bg2) 50%, var(--dark-bg3) 100%);
   font-synthesis: none;
