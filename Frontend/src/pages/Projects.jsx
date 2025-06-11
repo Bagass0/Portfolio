@@ -1,41 +1,60 @@
 import { useState } from "react";
 import "../styles/Projects.css";
 
-// Ajoute une propriété image à chaque techno (mets tes images dans /public/images/techs/)
+// Regroupe les technos par catégorie et donne une couleur par catégorie
 const techs = [
-  { name: "React", type: "framework", image: "/images/techs/react.png" },
-  { name: "Node.js", type: "runtime", image: "/images/techs/nodejs.png" },
-  { name: "Express", type: "framework", image: "/images/techs/express.png" },
-  { name: "MongoDB", type: "database", image: "/images/techs/mongodb.png" },
-  { name: "TypeScript", type: "language", image: "/images/techs/typescript.png" },
-  { name: "Docker", type: "architecture", image: "/images/techs/docker.png" },
-  { name: "Azure", type: "cloud", image: "/images/techs/azure.png" },
-  { name: "Python", type: "language", image: "/images/techs/python.png" },
-  { name: "FastAPI", type: "framework", image: "/images/techs/fastapi.png" },
-  { name: "PostgreSQL", type: "database", image: "/images/techs/postgresql.png" },
-  // ...ajoute ce que je veux
+  // Frameworks & bibliothèques (bleu)
+  { name: "ReactJS", type: "framework", image: "/images/techs/react.svg", category: "framework" },
+  { name: "Vite", type: "framework", image: "/images/techs/vite.svg", category: "framework" },
+  { name: "React Native", type: "framework", image: "/images/techs/react.svg", category: "framework" },
+  { name: "EXPO", type: "framework", image: "/images/techs/expo.png", category: "framework" },
+  { name: "NodeJS", type: "framework", image: "/images/techs/nodejs.svg", category: "framework" },
+  { name: "Express", type: "framework", image: "/images/techs/express.svg", category: "framework" },
+  { name: "Symfony", type: "framework", image: "/images/techs/symfony.png", category: "framework" },
+
+  // Langages (vert)
+  { name: "PHP", type: "language", image: "/images/techs/php.svg", category: "language" },
+  { name: "JavaScript", type: "language", image: "/images/techs/javascript.svg", category: "language" },
+  { name: "SQL", type: "language", image: "/images/techs/sql.svg", category: "language" },
+  { name: "Python", type: "language", image: "/images/techs/python.svg", category: "language" },
+  { name: "HTML5", type: "language", image: "/images/techs/html5.svg", category: "language" },
+  { name: "CSS3", type: "language", image: "/images/techs/css3.svg", category: "language" },
+
+  // SGBD (violet)
+  { name: "MySQL", type: "sgbd", image: "/images/techs/mysql.svg", category: "sgbd" },
+  { name: "PostgreSQL", type: "sgbd", image: "/images/techs/postgresql.svg", category: "sgbd" },
+  { name: "MongoDB", type: "sgbd", image: "/images/techs/mongodb.svg", category: "sgbd" },
+
+  // Outils & environnements (orange)
+  { name: "Linux", type: "tool", image: "/images/techs/linux.svg", category: "tool" },
+  { name: "Git", type: "tool", image: "/images/techs/git.svg", category: "tool" },
+  { name: "GitHub Actions", type: "tool", image: "/images/techs/github.svg", category: "tool" },
+  { name: "GitLab CI/CD", type: "tool", image: "/images/techs/gitlab.svg", category: "tool" },
+  { name: "Cypress", type: "tool", image: "/images/techs/cypress.svg", category: "tool" },
+  { name: "vitest", type: "tool", image: "/images/techs/vitest.svg", category: "tool" },
+  { name: "Docker", type: "tool", image: "/images/techs/docker.svg", category: "tool" },
 ];
 
 const projects = [
   {
     title: "Portfolio",
     description: "Mon site personnel en React.",
-    techs: ["React", "TypeScript"],
+    techs: ["ReactJS", "Vite", "JavaScript", "HTML5", "CSS3", "Git", "GitHub Actions"],
     link: "#"
   },
   {
     title: "API Node",
     description: "API REST Node.js/Express/MongoDB.",
-    techs: ["Node.js", "Express", "MongoDB"],
+    techs: ["NodeJS", "Express", "MongoDB", "JavaScript", "Git", "Docker"],
     link: "#"
   },
   {
     title: "Dashboard DevOps",
     description: "Dashboard déployé sur Azure avec Docker.",
-    techs: ["Docker", "Azure", "React"],
+    techs: ["Docker", "GitLab CI/CD", "ReactJS", "Vite", "JavaScript", "Linux"],
     link: "#"
   },
-  // ...ajoute des projets
+  // ...ajoute tes projets
 ];
 
 const Projects = () => {
@@ -61,7 +80,7 @@ const Projects = () => {
           {techs.map(tech => (
             <button
               key={tech.name}
-              className={`tech-btn${selected.includes(tech.name) ? " selected" : ""}`}
+              className={`tech-btn ${tech.category} ${selected.includes(tech.name) ? "selected" : ""}`}
               onClick={() => toggleTech(tech.name)}
             >
               <img src={tech.image} alt={tech.name} className="tech-icon" />
@@ -79,9 +98,18 @@ const Projects = () => {
             <h3>{proj.title}</h3>
             <p>{proj.description}</p>
             <div className="project-techs">
-              {proj.techs.map(t => (
-                <span className="project-tech" key={t}>{t}</span>
-              ))}
+              {proj.techs.map(t => {
+                const tech = techs.find(tech => tech.name === t);
+                const category = tech ? tech.category : "";
+                return (
+                  <span
+                    className={`project-tech project-tech-${category}`}
+                    key={t}
+                  >
+                    {t}
+                  </span>
+                );
+              })}
             </div>
             {proj.link && <a href={proj.link} target="_blank" rel="noopener noreferrer">Voir</a>}
           </div>

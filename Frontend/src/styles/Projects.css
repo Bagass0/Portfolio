@@ -1,10 +1,9 @@
 .projects-page {
-  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-top: 90px; /* ajuste selon la hauteur de ta barre de filtres */
+  padding: 32px 8px 0 8px;
 }
 
 .dev-banner {
@@ -54,9 +53,10 @@
 }
 
 .tech-filters-fixed {
-  position: static; /* plus de fixed ni sticky */
+  position: static;
   width: 100%;
-  background: transparent;
+  max-width: 70%;
+  margin: 0 auto;
   z-index: 10;
   padding-top: 18px;
   padding-bottom: 10px;
@@ -95,6 +95,86 @@
   border-color: #90caf9;
 }
 
+.tech-btn.framework {
+  background: #192231;
+  border-color: #223a54;
+  color: #4fc3f7;
+}
+.tech-btn.framework.selected,
+.tech-btn.framework:hover {
+  background: #223a54;
+  color: #90caf9;
+  border-color: #4fc3f7;
+}
+
+/* Frameworks & bibliothèques : bleu très doux */
+.tech-btn.framework.selected {
+  background: #4fc3f7;
+  color: #16202a;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 2px #2196f355;
+}
+
+.tech-btn.language {
+  background: #1a2d23;
+  border-color: #22543a;
+  color: #43e68b;
+}
+.tech-btn.language.selected,
+.tech-btn.language:hover {
+  background: #22543a;
+  color: #b9f6ca;
+  border-color: #43e68b;
+}
+
+/* Langages : vert très doux */
+.tech-btn.language.selected {
+  background: #43e68b;
+  color: #16202a;
+  border-color: #1abc6b;
+  box-shadow: 0 0 0 2px #1abc6b55;
+}
+
+.tech-btn.sgbd {
+  background: #221a2d;
+  border-color: #3a2254;
+  color: #b388ff;
+}
+.tech-btn.sgbd.selected,
+.tech-btn.sgbd:hover {
+  background: #3a2254;
+  color: #e1bfff;
+  border-color: #b388ff;
+}
+
+/* SGBD : violet très doux */
+.tech-btn.sgbd.selected {
+  background: #b388ff;
+  color: #2a1a3a;
+  border-color: #8e24aa;
+  box-shadow: 0 0 0 2px #8e24aa55;
+}
+
+.tech-btn.tool {
+  background: #2d241a;
+  border-color: #544122;
+  color: #ffb74d;
+}
+.tech-btn.tool.selected,
+.tech-btn.tool:hover {
+  background: #544122;
+  color: #ffe0b2;
+  border-color: #ffb74d;
+}
+
+/* Outils & environnements : orange très doux */
+.tech-btn.tool.selected {
+  background: #ffb74d;
+  color: #3a2a18;
+  border-color: #ff9800;
+  box-shadow: 0 0 0 2px #ff980055;
+}
+
 .tech-icon {
   width: 22px;
   height: 22px;
@@ -105,7 +185,6 @@
 }
 
 .projects-list {
-  flex: 1;
   display: flex;
   flex-wrap: wrap;
   gap: 22px;
@@ -146,6 +225,30 @@
   border-radius: 6px;
   padding: 3px 10px;
   font-size: 0.95rem;
+}
+
+/* Tags de techno dans les cartes projet, fond plus doux et couleur principale */
+.project-tech-framework {
+  background: #1a2736;
+  color: #4fc3f7;
+}
+.project-tech-language {
+  background: #1a3627;
+  color: #43e68b;
+}
+.project-tech-sgbd {
+  background: #241a36;
+  color: #b388ff;
+}
+.project-tech-tool {
+  background: #332818;
+  color: #ffb74d;
+}
+
+/* Supprime la bordure bleue par défaut du focus */
+.tech-btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .no-project {
