@@ -37,27 +37,39 @@ const techs = [
 
 const projects = [
   {
-    title: "Portfolio",
-    description: "Mon site personnel en React.",
-    techs: ["ReactJS", "Vite", "JavaScript", "HTML5", "CSS3", "Git", "GitHub Actions"],
+    title: "MyGreenChoice",
+    date: "18 avril 2025",
+    description: "Plateforme éducative sur le gaz vert et les énergies renouvelables avec monitoring et sécurité avancés",
+    techs: ["ReactJS", "Express", "MySQL", "NodeJS", "JavaScript", "CSS3", "Git", "Docker", "Linux"],
+    duration: "3 mois",
     link: "#",
-    image: "/images/projets/default.png"
+    image: "/images/projets/default.png",
+    more: "En savoir plus",
+    site: "https://mygreenchoice.example.com"
   },
   {
-    title: "API Node",
-    description: "API REST Node.js/Express/MongoDB.",
-    techs: ["NodeJS", "Express", "MongoDB", "JavaScript", "Git", "Docker"],
+    title: "Airneis",
+    date: "15 Mars 2024",
+    description: "Site e-commerce de vente de meubles avec interface complète de gestion",
+    techs: ["ReactJS", "PHP", "React Native", "MySQL", "JavaScript"],
+    duration: "6 mois",
     link: "#",
-    image: "/images/projets/default.png"
+    image: "/images/projets/default.png",
+    more: "En savoir plus",
+    site: "https://airneis.example.com",
+    badge: "NOUVEAU"
   },
   {
-    title: "Dashboard DevOps",
-    description: "Dashboard déployé sur Azure avec Docker.",
-    techs: ["Docker", "GitLab CI/CD", "ReactJS", "Vite", "JavaScript", "Linux"],
+    title: "Portfolio Personnel",
+    date: "25 mai 2025",
+    description: "Un site portfolio moderne avec animations et internationalisation",
+    techs: ["ReactJS", "JavaScript", "HTML5", "CSS3", "Git", "GitHub Actions"],
+    duration: "1 semaine",
     link: "#",
-    image: "/images/projets/default.png"
-  },
-  // ...ajoute tes projets
+    image: "/images/projets/default.png",
+    more: "En savoir plus",
+    site: "https://portfolio.example.com"
+  }
 ];
 
 const Projects = () => {

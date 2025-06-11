@@ -154,7 +154,7 @@
   box-shadow: 0 2px 12px rgba(33,150,243,0.08);
   padding: 22px 18px;
   min-width: 220px;
-  max-width: 320px;
+  max-width: 350px;
   color: #e3f2fd;
   display: flex;
   flex-direction: column;
@@ -167,7 +167,7 @@
 }
 
 .project-techs {
-  margin-top: 10px;
+  margin: 10px 0;
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
@@ -199,7 +199,6 @@
   color: #ffb74d;
 }
 
-/* Supprime la bordure bleue par défaut du focus */
 .tech-btn:focus {
   outline: none;
   box-shadow: none;
