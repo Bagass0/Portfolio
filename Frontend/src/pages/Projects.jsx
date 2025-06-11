@@ -40,19 +40,22 @@ const projects = [
     title: "Portfolio",
     description: "Mon site personnel en React.",
     techs: ["ReactJS", "Vite", "JavaScript", "HTML5", "CSS3", "Git", "GitHub Actions"],
-    link: "#"
+    link: "#",
+    image: "/images/projets/default.png"
   },
   {
     title: "API Node",
     description: "API REST Node.js/Express/MongoDB.",
     techs: ["NodeJS", "Express", "MongoDB", "JavaScript", "Git", "Docker"],
-    link: "#"
+    link: "#",
+    image: "/images/projets/default.png"
   },
   {
     title: "Dashboard DevOps",
     description: "Dashboard déployé sur Azure avec Docker.",
     techs: ["Docker", "GitLab CI/CD", "ReactJS", "Vite", "JavaScript", "Linux"],
-    link: "#"
+    link: "#",
+    image: "/images/projets/default.png"
   },
   // ...ajoute tes projets
 ];
@@ -95,6 +98,13 @@ const Projects = () => {
         )}
         {filteredProjects.map(proj => (
           <div className="project-card" key={proj.title}>
+            <div className="project-banner">
+              <img
+                src={proj.image ? proj.image : "/images/projects/default.png"}
+                alt={`Aperçu de ${proj.title}`}
+                className="project-preview-banner"
+              />
+            </div>
             <h3>{proj.title}</h3>
             <p>{proj.description}</p>
             <div className="project-techs">

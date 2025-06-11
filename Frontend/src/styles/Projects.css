@@ -88,37 +88,27 @@
   gap: 7px;
 }
 
-.tech-btn.selected,
-.tech-btn:hover {
-  background: #4fc3f7;
-  color: #16202a;
-  border-color: #90caf9;
+/* Un seul fond sombre pour tous les filtres, couleur texte selon la catégorie */
+.tech-btn.framework,
+.tech-btn.language,
+.tech-btn.sgbd,
+.tech-btn.tool {
+  background: #181f2a;
+  border-color: #232b3a;
 }
 
-.tech-btn.framework {
-  background: #192231;
-  border-color: #223a54;
-  color: #4fc3f7;
-}
+/* Couleur texte par catégorie */
+.tech-btn.framework { color: #4fc3f7; }
+.tech-btn.language { color: #43e68b; }
+.tech-btn.sgbd { color: #b388ff; }
+.tech-btn.tool { color: #ffb74d; }
+
+/* Sélectionné/hover : fond plus clair + couleur texte accentuée */
 .tech-btn.framework.selected,
 .tech-btn.framework:hover {
   background: #223a54;
   color: #90caf9;
   border-color: #4fc3f7;
-}
-
-/* Frameworks & bibliothèques : bleu très doux */
-.tech-btn.framework.selected {
-  background: #4fc3f7;
-  color: #16202a;
-  border-color: #2196f3;
-  box-shadow: 0 0 0 2px #2196f355;
-}
-
-.tech-btn.language {
-  background: #1a2d23;
-  border-color: #22543a;
-  color: #43e68b;
 }
 .tech-btn.language.selected,
 .tech-btn.language:hover {
@@ -126,53 +116,17 @@
   color: #b9f6ca;
   border-color: #43e68b;
 }
-
-/* Langages : vert très doux */
-.tech-btn.language.selected {
-  background: #43e68b;
-  color: #16202a;
-  border-color: #1abc6b;
-  box-shadow: 0 0 0 2px #1abc6b55;
-}
-
-.tech-btn.sgbd {
-  background: #221a2d;
-  border-color: #3a2254;
-  color: #b388ff;
-}
 .tech-btn.sgbd.selected,
 .tech-btn.sgbd:hover {
   background: #3a2254;
   color: #e1bfff;
   border-color: #b388ff;
 }
-
-/* SGBD : violet très doux */
-.tech-btn.sgbd.selected {
-  background: #b388ff;
-  color: #2a1a3a;
-  border-color: #8e24aa;
-  box-shadow: 0 0 0 2px #8e24aa55;
-}
-
-.tech-btn.tool {
-  background: #2d241a;
-  border-color: #544122;
-  color: #ffb74d;
-}
 .tech-btn.tool.selected,
 .tech-btn.tool:hover {
   background: #544122;
   color: #ffe0b2;
   border-color: #ffb74d;
-}
-
-/* Outils & environnements : orange très doux */
-.tech-btn.tool.selected {
-  background: #ffb74d;
-  color: #3a2a18;
-  border-color: #ff9800;
-  box-shadow: 0 0 0 2px #ff980055;
 }
 
 .tech-icon {
@@ -191,7 +145,7 @@
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  margin-top: 24px;
+  margin: 30px 0;
 }
 
 .project-card {
@@ -264,4 +218,23 @@
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: 1px;
+}
+
+.project-banner {
+  width: 100%;
+  height: 150px;
+  background: #181f2a;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-preview-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
