@@ -84,12 +84,15 @@ const Projects = () => {
   const filteredProjects = selected.length === 0
     ? projects
     : projects.filter(p =>
-        selected.every(sel => p.techs.includes(sel))
-      );
+      selected.every(sel => p.techs.includes(sel))
+    );
 
   return (
     <div className="projects-page">
       <h2 className="projects-title">Mes Projets</h2>
+      <p className="project-intro">
+        Parcourez mes réalisations pour mieux comprendre mon expérience et mes domaines d’expertise.
+      </p>
       <div className="tech-filters-fixed">
         <div className="tech-grid">
           {techs.map(tech => (

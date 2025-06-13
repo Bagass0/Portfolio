@@ -6,6 +6,14 @@
   padding: 32px 8px 0 8px;
 }
 
+.project-intro {
+  color: #b0bec5;
+  font-size: 1.08rem;
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 420px;
+}
+
 .dev-banner {
   margin: 0 auto;
   max-width: 420px;
@@ -16,7 +24,7 @@
   box-shadow:
     0 0 10px #7ecbfa,
     0 0 24px #263446,
-    0 2px 12px rgba(33,150,243,0.10);
+    0 2px 12px rgba(33, 150, 243, 0.10);
   padding: 38px 26px;
   font-size: 1.25rem;
   font-weight: 700;
@@ -45,9 +53,11 @@
   opacity: 0.7;
   z-index: 2;
 }
+
 .dev-banner::before {
   left: 12px;
 }
+
 .dev-banner::after {
   right: 12px;
 }
@@ -98,10 +108,21 @@
 }
 
 /* Couleur texte par catégorie */
-.tech-btn.framework { color: #4fc3f7; }
-.tech-btn.language { color: #43e68b; }
-.tech-btn.sgbd { color: #b388ff; }
-.tech-btn.tool { color: #ffb74d; }
+.tech-btn.framework {
+  color: #4fc3f7;
+}
+
+.tech-btn.language {
+  color: #43e68b;
+}
+
+.tech-btn.sgbd {
+  color: #b388ff;
+}
+
+.tech-btn.tool {
+  color: #ffb74d;
+}
 
 /* Sélectionné/hover : fond plus clair + couleur texte accentuée */
 .tech-btn.framework.selected,
@@ -110,18 +131,21 @@
   color: #90caf9;
   border-color: #4fc3f7;
 }
+
 .tech-btn.language.selected,
 .tech-btn.language:hover {
   background: #22543a;
   color: #b9f6ca;
   border-color: #43e68b;
 }
+
 .tech-btn.sgbd.selected,
 .tech-btn.sgbd:hover {
   background: #3a2254;
   color: #e1bfff;
   border-color: #b388ff;
 }
+
 .tech-btn.tool.selected,
 .tech-btn.tool:hover {
   background: #544122;
@@ -135,7 +159,7 @@
   object-fit: contain;
   border-radius: 4px;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(33,150,243,0.07);
+  box-shadow: 0 1px 4px rgba(33, 150, 243, 0.07);
 }
 
 .projects-list {
@@ -151,7 +175,7 @@
 .project-card {
   background: #202b3a;
   border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(33,150,243,0.08);
+  box-shadow: 0 2px 12px rgba(33, 150, 243, 0.08);
   padding: 22px 18px;
   min-width: 220px;
   max-width: 350px;
@@ -186,14 +210,17 @@
   background: #1a2736;
   color: #4fc3f7;
 }
+
 .project-tech-language {
   background: #1a3627;
   color: #43e68b;
 }
+
 .project-tech-sgbd {
   background: #241a36;
   color: #b388ff;
 }
+
 .project-tech-tool {
   background: #332818;
   color: #ffb74d;
