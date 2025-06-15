@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Airneis",
     date: "15 Mars 2024",
-    description: "Site e-commerce de vente de meubles avec interface complète degestion des produits et utilisateurs",
+    description: "Site e-commerce de vente de meubles avec interface complète de gestion des produits et utilisateurs",
     techs: ["ReactJS", "PHP", "React Native", "MySQL", "JavaScript"],
     duration: "6 mois",
     link: "#",
