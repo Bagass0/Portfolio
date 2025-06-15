@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "../styles/Projects.css";
 
-// Regroupe les technos par catégorie et donne une couleur par catégorie
 const techs = [
-  // Frameworks & bibliothèques (bleu)
   { name: "ReactJS", type: "framework", image: "/images/techs/react.svg", category: "framework" },
   { name: "Vite", type: "framework", image: "/images/techs/vite.svg", category: "framework" },
   { name: "React Native", type: "framework", image: "/images/techs/react.svg", category: "framework" },
@@ -12,7 +10,6 @@ const techs = [
   { name: "Express", type: "framework", image: "/images/techs/express.svg", category: "framework" },
   { name: "Symfony", type: "framework", image: "/images/techs/symfony.png", category: "framework" },
 
-  // Langages (vert)
   { name: "PHP", type: "language", image: "/images/techs/php.svg", category: "language" },
   { name: "JavaScript", type: "language", image: "/images/techs/javascript.svg", category: "language" },
   { name: "SQL", type: "language", image: "/images/techs/sql.svg", category: "language" },
@@ -20,12 +17,10 @@ const techs = [
   { name: "HTML5", type: "language", image: "/images/techs/html5.svg", category: "language" },
   { name: "CSS3", type: "language", image: "/images/techs/css3.svg", category: "language" },
 
-  // SGBD (violet)
   { name: "MySQL", type: "sgbd", image: "/images/techs/mysql.svg", category: "sgbd" },
   { name: "PostgreSQL", type: "sgbd", image: "/images/techs/postgresql.svg", category: "sgbd" },
   { name: "MongoDB", type: "sgbd", image: "/images/techs/mongodb.svg", category: "sgbd" },
 
-  // Outils & environnements (orange)
   { name: "Linux", type: "tool", image: "/images/techs/linux.svg", category: "tool" },
   { name: "Git", type: "tool", image: "/images/techs/git.svg", category: "tool" },
   { name: "GitHub Actions", type: "tool", image: "/images/techs/github.svg", category: "tool" },
@@ -43,9 +38,10 @@ const projects = [
     techs: ["ReactJS", "Express", "MySQL", "NodeJS", "JavaScript", "CSS3", "Git", "Docker", "Linux"],
     duration: "3 mois",
     link: "#",
-    image: "/images/projets/default.png",
+    image: "/images/projets/mygreenchoice.png",
     more: "En savoir plus",
-    site: "https://mygreenchoice.example.com"
+    site: "https://fantikspace.fr/",
+    tag: "Scolaire"
   },
   {
     title: "Airneis",
@@ -56,8 +52,7 @@ const projects = [
     link: "#",
     image: "/images/projets/default.png",
     more: "En savoir plus",
-    site: "https://airneis.example.com",
-    badge: "NOUVEAU"
+    tag: "Scolaire"
   },
   {
     title: "Portfolio Personnel",
@@ -66,9 +61,9 @@ const projects = [
     techs: ["ReactJS", "JavaScript", "HTML5", "CSS3", "Git", "GitHub Actions"],
     duration: "1 semaine",
     link: "#",
-    image: "/images/projets/default.png",
+    image: "/images/projets/portfolio.png",
     more: "En savoir plus",
-    site: "https://portfolio.example.com"
+    tag: "Personnel",
   }
 ];
 
@@ -119,11 +114,16 @@ const Projects = () => {
                 alt={`Aperçu de ${proj.title}`}
                 className="project-preview-banner"
               />
+              {proj.tag && (
+                <span className={`project-type-tag project-type-${proj.tag.toLowerCase()}`}>
+                  {proj.tag}
+                </span>
+              )}
             </div>
             <h3>{proj.title}</h3>
             <p>{proj.description}</p>
             <div className="project-techs">
-              {proj.techs.map(t => {
+              {proj.techs.slice(0, 4).map(t => {
                 const tech = techs.find(tech => tech.name === t);
                 const category = tech ? tech.category : "";
                 return (
@@ -135,8 +135,16 @@ const Projects = () => {
                   </span>
                 );
               })}
+              {proj.techs.length > 4 && (
+                <span className="project-tech project-tech-more">
+                  +{proj.techs.length - 4}
+                </span>
+              )}
             </div>
-            {proj.link && <a href={proj.link} target="_blank" rel="noopener noreferrer">Voir</a>}
+            {/* Affiche le lien uniquement si proj.site existe */}
+            {proj.site && (
+              <a href={proj.site} target="_blank" rel="noopener noreferrer">Voir</a>
+            )}
           </div>
         ))}
       </div>
