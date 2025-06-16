@@ -9,7 +9,6 @@
   --card-bg: rgba(20, 30, 48, 0.95);
   --shadow: 0 6px 32px 0 rgba(33, 150, 243, 0.15);
   --radius: 18px;
-  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: var(--text-main);
