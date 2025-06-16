@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { ConfigContext } from '../context/ConfigContext';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [lang, setLang] = useState('fr');
+  const { lang, setLang } = useContext(ConfigContext);
   const location = useLocation();
 
   const navOptions = [
