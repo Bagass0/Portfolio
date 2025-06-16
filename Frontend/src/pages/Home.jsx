@@ -128,7 +128,7 @@ const Home = () => {
         <div className="header-content">
           <img src="/banniere-header.png" alt="Logo" className="header-banniere" />
           <h1 className="header-title">
-            <span style={{ color: '#4fc3f7', fontWeight: 700 }}>
+            <span style={{ color: '#4fc3f7', fontWeight: 700, fontFamily: 'Comic Sans MS' }}>
               <Typewriter
                 words={roles}
                 loop={0}
