@@ -13,34 +13,25 @@ export const NavbarTextes = {
     },
   };
   
-  export const FooterTextes = {
-    fr: {
-      copyright: "© 2025 Hugo Barbosa Pereira. Tous droits réservés.",
-    },
-    en: {
-      copyright: "© 2025 Hugo Barbosa Pereira. All rights reserved.",
-    },
-  };
-  
   export const AboutTextes = {
     fr: {
       title: "À propos de moi",
-      description: "Je suis un développeur passionné par la création de solutions innovantes.",
+      description: "Cette page est en cours de développement",
     },
     en: {
       title: "About Me",
-      description: "I am a developer passionate about creating innovative solutions.",
+      description: "This page is under development",
     },
   };
   
   export const ContactTextes = {
     fr: {
-      title: "Contactez-moi",
-      subtitle: "N'hésitez pas à me contacter via les moyens ci-dessous.",
+      title: "Entrer en contact",
+      subtitle: "Discutons ensemble! Pour toute collaboration, question ou opportunité, contactez-moi via l’un des moyens ci-dessous.",
     },
     en: {
       title: "Contact Me",
-      subtitle: "Feel free to reach out to me using the methods below.",
+      subtitle: "Let's talk! For any collaboration, question, or opportunity, contact me using one of the methods below.",
     },
   };
   
@@ -70,21 +61,23 @@ export const NavbarTextes = {
   export const PageNotFoundTextes = {
     fr: {
       title: "Page non trouvée",
-      description: "La page que vous recherchez n'existe pas.",
+      subtitle: "La page que vous recherchez n'existe pas.",
+      backToHome: "Retour à l'accueil",
     },
     en: {
       title: "Page Not Found",
-      description: "The page you are looking for does not exist.",
+      subtitle: "The page you are looking for does not exist.",
+      backToHome: "Back to Home page",
     },
   };
   
   export const ProjectsTextes = {
     fr: {
       title: "Mes Projets",
-      description: "Découvrez mes projets récents.",
+      subtitle: "Parcourez mes réalisations pour mieux comprendre mon expérience et mes domaines d’expertise.",
     },
     en: {
       title: "My Projects",
-      description: "Explore my recent projects.",
+      subtitle: "Take a look at my achievements to better understand my experience and areas of expertise.",
     },
   };

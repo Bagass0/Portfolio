@@ -1,5 +1,7 @@
-import { useState } from "react";
 import "../styles/Projects.css";
+import { useState, useContext } from "react";
+import { ConfigContext } from "../context/ConfigContext";
+import { ProjectsTextes } from "../utils/textes";
 
 const techs = [
   { name: "ReactJS", type: "framework", image: "/images/techs/react.svg", category: "framework" },
@@ -68,6 +70,8 @@ const projects = [
 ];
 
 const Projects = () => {
+  const { lang } = useContext(ConfigContext);
+  const textes = ProjectsTextes[lang];
   const [selected, setSelected] = useState([]);
 
   const toggleTech = (name) => {
@@ -84,10 +88,8 @@ const Projects = () => {
 
   return (
     <div className="projects-page">
-      <h2 className="projects-title">Mes Projets</h2>
-      <p className="project-intro">
-        Parcourez mes réalisations pour mieux comprendre mon expérience et mes domaines d’expertise.
-      </p>
+      <h2 className="projects-title">{ textes.title }</h2>
+      <p className="project-intro">{ textes.subtitle }</p>
       <div className="tech-filters-fixed">
         <div className="tech-grid">
           {techs.map(tech => (
