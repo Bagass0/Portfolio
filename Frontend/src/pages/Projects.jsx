@@ -46,7 +46,7 @@ const projects = [
   {
     title: "Airneis",
     date: "15 Mars 2024",
-    description: "Site e-commerce de vente de meubles avec interface complète de gestion",
+    description: "Site e-commerce de vente de meubles avec interface complète de gestion des produits et utilisateurs",
     techs: ["ReactJS", "PHP", "React Native", "MySQL", "JavaScript"],
     duration: "6 mois",
     link: "#",
@@ -121,7 +121,9 @@ const Projects = () => {
               )}
             </div>
             <h3>{proj.title}</h3>
-            <p>{proj.description}</p>
+            <p>
+              {proj.description}
+            </p>
             <div className="project-techs">
               {proj.techs.slice(0, 4).map(t => {
                 const tech = techs.find(tech => tech.name === t);
@@ -141,9 +143,17 @@ const Projects = () => {
                 </span>
               )}
             </div>
-            {/* Affiche le lien uniquement si proj.site existe */}
+            {/* Affiche le bouton moderne uniquement si proj.site existe */}
             {proj.site && (
-              <a href={proj.site} target="_blank" rel="noopener noreferrer">Voir</a>
+              <a
+                href={proj.site}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-site-btn"
+              >
+                <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><path fill="currentColor" d="M7.293 14.707a1 1 0 0 1 0-1.414L12.586 8H9a1 1 0 1 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V9.414l-5.293 5.293a1 1 0 0 1-1.414 0z"/></svg>
+                Voir le projet
+              </a>
             )}
           </div>
         ))}
