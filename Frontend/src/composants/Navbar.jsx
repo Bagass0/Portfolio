@@ -1,18 +1,20 @@
 import { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ConfigContext } from '../context/ConfigContext';
+import { NavbarTextes } from '../utils/textes';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { lang, setLang } = useContext(ConfigContext);
   const location = useLocation();
+  const textes = NavbarTextes[lang];
 
   const navOptions = [
-    { path: '/', label: lang === 'fr' ? 'Accueil' : 'Home' },
-    { path: '/projects', label: lang === 'fr' ? 'Projets' : 'Projects' },
-    { path: '/about', label: lang === 'fr' ? 'À propos' : 'About' },
-    { path: '/contact', label: lang === 'fr' ? 'Contact' : 'Contact' },
+    { path: '/', label: textes.home },
+    { path: '/projects', label: textes.projects },
+    { path: '/about', label: textes.about },
+    { path: '/contact', label: textes.contact },
   ];
 
   return (
