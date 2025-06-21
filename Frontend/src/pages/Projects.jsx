@@ -32,47 +32,13 @@ const techs = [
   { name: "Docker", type: "tool", image: "/images/techs/docker.svg", category: "tool" },
 ];
 
-const projects = [
-  {
-    title: "MyGreenChoice",
-    date: "18 avril 2025",
-    description: "Plateforme éducative sur le gaz vert et les énergies renouvelables avec monitoring et sécurité avancés",
-    techs: ["ReactJS", "Express", "MySQL", "NodeJS", "JavaScript", "CSS3", "Git", "Docker", "Linux"],
-    duration: "3 mois",
-    link: "#",
-    image: "/images/projets/mygreenchoice.png",
-    more: "En savoir plus",
-    site: "https://fantikspace.fr/",
-    tag: "Scolaire"
-  },
-  {
-    title: "Airneis",
-    date: "15 Mars 2024",
-    description: "Site e-commerce de vente de meubles avec interface complète de gestion des produits et utilisateurs",
-    techs: ["ReactJS", "PHP", "React Native", "MySQL", "JavaScript"],
-    duration: "6 mois",
-    link: "#",
-    image: "/images/projets/default.png",
-    more: "En savoir plus",
-    tag: "Scolaire"
-  },
-  {
-    title: "Portfolio Personnel",
-    date: "25 mai 2025",
-    description: "Un site portfolio moderne avec animations et internationalisation",
-    techs: ["ReactJS", "JavaScript", "HTML5", "CSS3", "Git", "GitHub Actions"],
-    duration: "1 semaine",
-    link: "#",
-    image: "/images/projets/portfolio.png",
-    more: "En savoir plus",
-    tag: "Personnel",
-  }
-];
-
 const Projects = () => {
   const { lang } = useContext(ConfigContext);
   const textes = ProjectsTextes[lang];
   const [selected, setSelected] = useState([]);
+
+  // Utilise les projets traduits depuis ProjectsTextes
+  const projects = textes.projects;
 
   const toggleTech = (name) => {
     setSelected(selected.includes(name)
@@ -88,8 +54,8 @@ const Projects = () => {
 
   return (
     <div className="projects-page">
-      <h2 className="projects-title">{ textes.title }</h2>
-      <p className="project-intro">{ textes.subtitle }</p>
+      <h2 className="projects-title">{textes.title}</h2>
+      <p className="project-intro">{textes.subtitle}</p>
       <div className="tech-filters-fixed">
         <div className="tech-grid">
           {techs.map(tech => (
@@ -106,7 +72,7 @@ const Projects = () => {
       </div>
       <div className="projects-list">
         {filteredProjects.length === 0 && (
-          <div className="no-project">Aucun projet ne correspond à ce filtre.</div>
+          <div className="no-project">{lang === "fr" ? "Aucun projet ne correspond à ce filtre." : "No project matches this filter."}</div>
         )}
         {filteredProjects.map(proj => (
           <div className="project-card" key={proj.title}>
@@ -145,7 +111,6 @@ const Projects = () => {
                 </span>
               )}
             </div>
-            {/* Affiche le bouton moderne uniquement si proj.site existe */}
             {proj.site && (
               <a
                 href={proj.site}
@@ -153,8 +118,8 @@ const Projects = () => {
                 rel="noopener noreferrer"
                 className="project-site-btn"
               >
-                <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><path fill="currentColor" d="M7.293 14.707a1 1 0 0 1 0-1.414L12.586 8H9a1 1 0 1 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V9.414l-5.293 5.293a1 1 0 0 1-1.414 0z"/></svg>
-                Voir le projet
+                <svg width="18" height="18" fill="none" viewBox="0 0 20 20"><path fill="currentColor" d="M7.293 14.707a1 1 0 0 1 0-1.414L12.586 8H9a1 1 0 1 1 0-2h6a1 1 0 0 1 1 1v6a1 1 0 1 1-2 0V9.414l-5.293 5.293a1 1 0 0 1-1.414 0z" /></svg>
+                {proj.more}
               </a>
             )}
           </div>

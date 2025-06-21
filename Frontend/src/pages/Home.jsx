@@ -1,127 +1,55 @@
 import '../styles/Home.css';
+import { useContext } from 'react';
+import { ConfigContext } from '../context/ConfigContext';
+import { HomeTextes } from '../utils/textes';
 import { Typewriter } from 'react-simple-typewriter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faLaptopCode, faCode, faCodeBranch, faGraduationCap, faUniversity, faChalkboardUser, faSchool } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLaptopCode,
+  faCode,
+  faCodeBranch,
+  faGraduationCap,
+  faUniversity,
+  faChalkboardUser,
+  faSchool
+} from '@fortawesome/free-solid-svg-icons';
 
-const roles = [
-  "Développeur Full Stack",
-  "Développeur PHP",
-  "Développeur Mobile",
-  "Développeur Web"
-];
-
-const experiences = [
-  {
-    type: "pro",
-    title: "Développeur Web Fullstack",
-    company: "Agence Arep Boulogne-Billancourt",
-    date: "2023 - 2025",
-    logo: faLaptopCode,
-    companyImg: "../images/entreprises/arep.jpg",
-    tasks: [
-      "Développement de sites web événementiels",
-      "Développement d'une application mobile évènementielle",
-      "Création d’un backoffice pour l’app mobile",
-      "Mise en place de systèmes d’authentification et gestion des utilisateurs"
-    ]
-  },
-  {
-    type: "pro",
-    title: "IT Specialist",
-    company: "VEESION 6 Rue Beaubourg, 75004 Paris",
-    date: "2022 - 2023",
-    logo: faCode,
-    companyImg: "../images/entreprises/veesion.png",
-    tasks: [
-      "Installation d'une IA",
-      "Création de scripts qui automatisent les installations",
-      "Maintenance",
-      "Résolution de bugs",
-      "Support Client"
-    ]
-  },
-  {
-    type: "pro",
-    title: "Stage de technicien de maintenance",
-    company: "Dumez Ile de France",
-    date: "De mai 2021 à juillet 2021",
-    logo: faCodeBranch,
-    companyImg: "../images/entreprises/dumez.jpg",
-    tasks: [
-      "Ticketing : installation et réparation",
-      "Maintenance salles informatiques",
-      "Préparation machines"
-    ]
-  }
-];
-
-const educations = [
-  {
-    type: "edu",
-    title: "Bac+5 Master Expert en Etudes et développement du Système d’Information",
-    school: "Ecole d’informatique H3 Hitema - 34 bis Rue du Cotentin 75015, 75015 Paris",
-    date: "2023 - 2025",
-    logo: faGraduationCap,
-    schoolImg: "/images/ecoles/hitema.jpg",
-    tasks: [
-      "Developpement : Structures de données et complexité, Cloud Computing, Machine Learning / IA, Web Scrapping",
-      "Evolution du SI : Micro Services, Serverless, PCA / PRA, Redis, Déploiement Continu / Intégration continue",
-      "Analyser un besoin, un cahier des charges",
-      "Concevoir des architectures",
-      "Assurer la mise en production continue",
-      "Piloter un projet et animer une équipe projet",
-      "Opérer une veille technologique"
-    ]
-  },
-  {
-    type: "edu",
-    title: "Bac+3 Bachelor Administrateur des Systèmes d’Information option Développement Web, logiciel et mobile",
-    school: "Ecole d’informatique H3 Hitema - 88 Bd Gallieni, 92130 Issy-les-Moulineaux",
-    date: "2022 - 2023",
-    logo: faUniversity,
-    schoolImg: "/images/ecoles/hitema.jpg",
-    tasks: [
-      "Concept de base : Algorithmie, Programmation Orientée Objet, C / C++, Python, Java",
-      "Base de données : SQL, MySQL, MongoDB",
-      "Développement Web : HTML5/CSS3, Javascript, React, NodeJS/Express, Python/FastAPI, PHP, Symfony",
-      "Développement Mobile : Android, React Native",
-      "Déploiement : Docker, Infrastructure et Réseau (Linux), Cybersécurité",
-      "Automatisation et DevOps : GitHub Actions, Gitlab CI/CD, Jenkins, Coolify, Prometheus/Grafana",
-      "Pilotage de projet : Gestion de projet, RGPD, Anglais, Git/Github"
-
-    ]
-  },
-  {
-    type: "edu",
-    title: "BTS Systèmes numériques informatique et réseaux",
-    school: "Lycée Polyvalent Christophe Colomb - 154 Rue de Boissy, 94370 Sucy-enBrie",
-    date: "2020 - 2022",
-    logo: faSchool,
-    schoolImg: "/images/ecoles/vdm.jpg",
-    tasks: [
-      "Langages étudiés : Python, C++, Java, HTML/CSS, PHP, JavaScript",
-      "Conception et réalisation d’un projet en équipe",
-      "Configuration de réseaux (IPv4, IPv6, DHCP, DNS, NAT…)",
-      "Protocoles réseau (TCP/IP, HTTP, FTP…)",
-      "Administration de systèmes Linux"
-    ]
-  },
-  {
-    type: "edu",
-    title: "Baccalauréat Scientifique",
-    school: "Lycée Polyvalent Samuel De Champlain - 94430 Chennevières-sur-Marne",
-    date: "2019 - 2020",
-    logo: faChalkboardUser,
-    schoolImg: "/images/ecoles/vdm.jpg",
-    tasks: [
-      "Spécialité Sciences de la Vie et de la Terre"
-    ]
-  },
-];
-
+const iconMap = {
+  faLaptopCode,
+  faCode,
+  faCodeBranch,
+  faGraduationCap,
+  faUniversity,
+  faChalkboardUser,
+  faSchool
+};
 
 const Home = () => {
+  const { lang } = useContext(ConfigContext);
+  const textes = HomeTextes[lang];
+
+  // Ajoute dynamiquement les icônes aux expériences et formations
+  const experiences = textes.experiences.map(exp => ({
+    ...exp,
+    logo: typeof exp.logo === "string" ? iconMap[exp.logo] : exp.logo,
+    companyImg: exp.companyImg
+      ? exp.companyImg.startsWith("/")
+        ? exp.companyImg
+        : `/images/entreprises/${exp.companyImg.replace(/^(\.\.\/)?images\/entreprises\//, "")}`
+      : null
+  }));
+
+  const educations = textes.educations.map(edu => ({
+    ...edu,
+    logo: typeof edu.logo === "string" ? iconMap[edu.logo] : edu.logo,
+    schoolImg: edu.schoolImg
+      ? edu.schoolImg.startsWith("/")
+        ? edu.schoolImg
+        : `/images/ecoles/${edu.schoolImg.replace(/^(\.\.\/)?images\/ecoles\//, "")}`
+      : null
+  }));
+
   return (
     <>
       <header className="home-header">
@@ -130,7 +58,7 @@ const Home = () => {
           <h1 className="header-title">
             <span style={{ color: '#4fc3f7', fontWeight: 700, fontFamily: 'Comic Sans MS' }}>
               <Typewriter
-                words={roles}
+                words={textes.roles}
                 loop={0}
                 cursor
                 cursorStyle="|"
@@ -162,7 +90,7 @@ const Home = () => {
         <div className="header-bg"></div>
       </header>
       <section className="timeline-section">
-        <h2 className="timeline-title">Expériences Professionnelles</h2>
+        <h2 className="timeline-title">{textes.experiencesTitle}</h2>
         <div className="timeline">
           {experiences.map((exp, idx) => (
             <div className={`timeline-item ${exp.type}`} key={idx}>
@@ -195,7 +123,7 @@ const Home = () => {
         </div>
       </section>
       <section className="timeline-section">
-        <h2 className="timeline-title">Parcours Scolaire</h2>
+        <h2 className="timeline-title">{textes.educationsTitle}</h2>
         <div className="timeline">
           {educations.map((edu, idx) => (
             <div className={`timeline-item ${edu.type}`} key={idx}>
