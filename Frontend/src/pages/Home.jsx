@@ -14,6 +14,7 @@ import {
   faChalkboardUser,
   faSchool
 } from '@fortawesome/free-solid-svg-icons';
+import { motion } from "framer-motion";
 
 const iconMap = {
   faLaptopCode,
@@ -93,7 +94,14 @@ const Home = () => {
         <h2 className="timeline-title">{textes.experiencesTitle}</h2>
         <div className="timeline">
           {experiences.map((exp, idx) => (
-            <div className={`timeline-item ${exp.type}`} key={idx}>
+            <motion.div
+              className={`timeline-item ${exp.type}`}
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 0.6, ease: [0.4, 2, 0.6, 1] }}
+            >
               <div className="timeline-icon">
                 <FontAwesomeIcon icon={exp.logo} />
               </div>
@@ -118,7 +126,7 @@ const Home = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
@@ -126,7 +134,14 @@ const Home = () => {
         <h2 className="timeline-title">{textes.educationsTitle}</h2>
         <div className="timeline">
           {educations.map((edu, idx) => (
-            <div className={`timeline-item ${edu.type}`} key={idx}>
+            <motion.div
+              className={`timeline-item ${edu.type}`}
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 0.6, ease: [0.4, 2, 0.6, 1] }}
+            >
               <div className="timeline-icon">
                 <FontAwesomeIcon icon={edu.logo} />
               </div>
@@ -151,7 +166,7 @@ const Home = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
